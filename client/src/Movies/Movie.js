@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import MovieCard from './MovieCard';
 
-const Movie = (props) => {
+const Movie = props => {
   const [movie, setMovie] = useState();
   const id = props.match.params.id;
   
@@ -32,7 +32,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie}/>
-      <div className="save-button">Save</div>
+      <button onClick={() => props.addToSavedList(movie)} className="save-button">Save</button>
     </div>
   );
 }
